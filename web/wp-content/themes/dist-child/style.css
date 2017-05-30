@@ -9,12 +9,22 @@
 
 /* General stuff */
 body {
-	background-color: #0b0b0b;
+	background-color: white; //#0b0b0b;
 }
 
 #wrapper, .topPageImage {
 	width: 1280px;
 	margin: 0 auto;
+}
+
+.redText{
+    color:red;
+    text-transform: uppercase;
+}
+
+.bigText{
+    font-size: 70px;
+    text-transform: uppercase;
 }
 /* General stuff end */
 
@@ -22,6 +32,79 @@ body {
 .header-top {
 	background-color: #fff;
 }
+
+.social li.facebook{
+    background: url(img/Facebook-Icon.png)no-repeat left top;
+}
+.social li.youTube{
+    background: url(img/Youtube-Icon.png) no-repeat center;
+    background-color: red;
+    height:24px;
+    width:31px;
+}
+#header-top-menu{
+    float:right;
+    margin-left:10px;
+}
+
+#header-top-menu span{
+    color:red;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: -10px;
+    float:left;
+    padding:10px 10px 0 0;
+}
+#header-main{
+    background: url("img/Eltec-Acier.jpg") repeat-y center top;
+    width:100%;
+}
+
+.container{
+    width:1280px;
+    padding:0;
+
+}
+
+.row {
+    margin: 0;
+}
+
+#outer-header {
+  width: 100%;
+}
+
+#nav {
+    height: 100%;
+    padding-top:13px;
+}
+
+#nav > li > a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    height: 20px;
+    display: block;
+    text-transform: uppercase;
+    padding : 15px;
+}
+
+#nav li.current-menu-item > a > span{
+    color:red;
+}
+
+#nav > li > a:active {
+    color:red;
+}
+
+.logo {
+  display: block;
+  background: url("img/Eltec-Logo.png") no-repeat center top;
+  height: 58px;
+  margin-top:-10px;
+}
+
 /* Header end */
 
 /* Page */
@@ -34,19 +117,21 @@ body {
 	position: relative;
 	left: 0;
 	top: 315px;
-	width: 520px;
 	height: 190px;
 }
-.topPageImage>div>div:first-child {
-	width: 460px;
+#titreSection{
+	//width: 460px;
 	height: 100%;
 	background-color: #000;
+        padding:7% 45px 0;
+        color:white;
+        /*
 	background-image: url(img/Eltec-Logo-Big.png);
 	background-position: center;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat;*/
 	float: left;
 }
-.topPageImage>div>div:last-child {
+#boutBaniere{
 	width: 0;
 	height: 0;
 	border-top: 190px solid #000;
@@ -73,6 +158,63 @@ body {
 .lireSuite a {
 	color: #fff;
 	cursor: pointer;
+}
+
+#sousMenuAccueil{
+    background:url(img/Eltec-Acier-Grand.jpg)no-repeat center top;
+    height: 117px;
+    width:1280px;
+    margin:-25px auto 0;
+}
+
+#service{
+    background: url(img/Eltec-Pieces-Service.png) no-repeat center center;
+    height: 117px;
+    width:426px;
+    float:left;
+}
+
+#modeles{
+    background: url(img/Eltec-Modeles.png) no-repeat center center;
+    height: 117px;
+    width:426px;
+    float:left;
+}
+
+#multimedia{
+    background: url(img/Eltec-Banque-Multimedia.png) no-repeat center center;
+    height: 117px;
+    width:426px;
+    float:left;
+}
+
+.sectionGauche{
+    float:left;
+    width:45%;
+}
+
+.sectionDroite{
+    float:right;
+    width:55%;
+}
+
+#mapMonde{
+    background: url(img/Map-Monde.png) no-repeat center center;
+    height:341px;
+}
+
+.discription ul{
+    list-style-image: url('img/Fleche-Noire.png');
+}
+
+#distributeurs{
+    min-height: 345px;
+}
+
+#informationTech{
+    background: url(img/Machine-Rouge-Acier.jpg) no-repeat center top;
+    width:1280px;
+    height: 1029px;
 }
 /* Page end */
 

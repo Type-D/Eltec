@@ -33,3 +33,20 @@ function html5blank_child_nav_footer($title)
         )
     );
 }
+
+function choixSection(){
+    $url = $_SERVER[REQUEST_URI];
+    $section = substr($url, 11);
+    echo $section;
+}
+
+function titreBaniere(){
+    switch (choixSection()){
+        case "":
+            echo "<img src='wp-content/themes/dist-child/img/Eltec-Logo-Big.png' alt='big Logo' style='width:364px'>";
+            break;
+        case "nos-modeles":
+            echo "Nos Modèles";
+            break;
+    }
+}
