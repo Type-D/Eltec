@@ -34,19 +34,68 @@ function html5blank_child_nav_footer($title)
     );
 }
 
-function choixSection(){
-    $url = $_SERVER[REQUEST_URI];
-    $section = substr($url, 11);
-    echo $section;
+function choixBanniere(){
+    $pageName = wp_title('', false);
+    $banniereTitre = substr($pageName, 0, (strpos($pageName, '-')-1));
+    switch ($banniereTitre){
+        case "accueil":
+            echo "<div class='avecSousTitre'><img class='bigLogo' src='wp-content/themes/dist-child/img/Eltec-Logo-Big.png'>"
+            . "<br/><span class='smallText'>par des forestier pour des forestier</span></div>";
+            break;
+        case "carrière":
+        case "groupe élément":
+        case "historique":
+        case "notre équipe":
+        case "qui nous sommes":
+            echo "<div class='avecSousTitre'><span class='titleText'>à propos</span>"
+            . "<br/><span class='bigText'>".$banniereTitre."</span></div>";
+            break;
+        case "série 220":
+        case "série 270":
+        case "série 310":
+            echo "<div class='avecSousTitre'><span class='titleText'>modèle</span>"
+            . "<br/><span class='bigText'>".$banniereTitre."</span></div>";
+            break;
+        case "forestiers":
+            echo "<div class='avecSousTitre'><span class='titleText'>construit par des</span>"
+            . "<br/><span class='bigText'>".$banniereTitre."</span></div>";
+            break;
+        default:
+            echo "<div class='sansSousTitre'><span class='bigText'>".$banniereTitre."</span></div>";
+    }
 }
 
-function titreBaniere(){
-    switch (choixSection()){
-        case "":
-            echo "<img src='wp-content/themes/dist-child/img/Eltec-Logo-Big.png' alt='big Logo' style='width:364px'>";
+function insererPage(){
+    $pageName = wp_title('', false);
+    $banniereTitre = substr($pageName, 0, (strpos($pageName, '-')-1));
+   
+    switch ($banniereTitre){
+        case "carrière":
+        case "groupe élément":
+        case "historique":
+        case "notre équipe":
+        case "qui nous sommes":
+        case "à propos":
+            include_once "à_propos.php";
             break;
-        case "nos-modeles":
-            echo "Nos Modèles";
+        case "série 220":
+        case "série 270":
+        case "série 310":
+        case "nos modèles":
+            include_once "nos_modèles.php";
             break;
+        case "nous joindre":
+            include_once "nous_joindre.php";
+            break;
+        case "pièce et service":
+            include_once "pieces_et_service";
+            break;
+        case "accueil":
+            include_once 'accueil';
+            break;
+        default:
+            echo "nom de la page = ".$banniereTitre;
+            include_once $banniereTitre.".php"; 
     }
+     
 }
