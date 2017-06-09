@@ -3,15 +3,7 @@
 <div class="topPageImage">
 	<div><!-- REM TODO À CODER -->		
             <div id="titreSection">
-                <?php 
-                $pageName = wp_title('', false);
-                $banniereTitre = substr($pageName, 0, (strpos($pageName, '-')-1));
-                if ($banniereTitre == "Accueil"){
-                    echo "<span class='redText bigText'>Eltec</span>";
-                }else {
-                    echo "<span class='bigText'>".$banniereTitre."</span>";                }
-                ?>
-                
+                <?php choixBanniere(); ?>  
             </div>
             <div id="boutBaniere"></div>
 	</div>
@@ -21,19 +13,12 @@
 		<div id="content" class="container">
 			<div class="discription">
                             <?php
-                                echo $banniereTitre;
-                                $the_query = new WP_Query( array('pagename'=>$banniereTitre) );
-                                echo $the_query;
-                                if ( $the_query->have_posts() ) {
-                                    echo "if".$the_query;
-
-                                    while ( $the_query->have_posts() ) {
-                                        echo "while".$the_query;
-                                        $the_query->the_post();
-                                        the_content();
-                                    }
-                                }
-                            ?>
+                                $postId = url_to_postid(get_permalink());
+                                $post = get_posts(array('include' => $postId));
+                                if ( $post ) {
+                                    the_content(); 
+                                } 
+                                ?>
 			</div>        
 		</div>
 	</div>

@@ -304,6 +304,10 @@ h2 {
         clear:both;
 }
 
+#googleMap{
+    width:1280px;
+    margin:0 auto 20px;
+}
 /* Page end */
 
 /* Accueil */
@@ -461,7 +465,19 @@ h2 {
 }
 /* distributeurs end */
 
-/* Nouvelles */
+/* Nouvelles et communauté*/
+
+#communaute{
+    width:1090px;
+    margin:20px auto 40px;
+}
+
+#communaute h2{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 #nouvelles{
     width:1090px;
     margin:0 auto;
@@ -470,6 +486,10 @@ h2 {
 #nouvelles h2{
     font-weight: bold;
     font-size:30px;
+}
+
+#nouvelles h2 a{
+    color:red;
 }
 
 .nouvelle{
@@ -512,9 +532,41 @@ h2 {
     font-size:12px;
     margin-left:30px;
 }
-
-
 /* nouvelle end */
+
+/* autres contenues */
+
+#propos, #modele, #piecesService{
+    width:1090px;
+    margin:0 auto;
+}
+
+#propos h2, #modele h2{
+    font-weight: bold;
+    font-size:30px;
+}
+
+#modele li{
+    color:black;
+    
+    
+}
+#modele p a {
+   color:red; 
+   font-size:24px;
+   text-transform: uppercase;
+}
+
+.listeAccordeon{
+
+}
+
+.listeAccordeon h4{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* autre contenue end */
 
 /* Everything footer */
 #outer-footer {
@@ -528,9 +580,22 @@ h2 {
 }
 
 #footer {
-	padding-top: 40px;
+	padding: 40px 0 60px;
 	overflow: hidden;
 	color: #fff;
+}
+
+#footerMenu{
+    margin:0 auto;
+    width:1090px;
+}
+
+.footerMenu{
+    width:20%;
+}
+
+.footerMenu ul li{
+    text-transform: capitalize;
 }
 
 #bottom-footer {

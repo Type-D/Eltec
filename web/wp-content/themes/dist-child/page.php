@@ -8,9 +8,16 @@
  * @since 1.0
  */
 
-get_header(); ?>
+get_header(); 
+
+$nomPage = wp_title('', false);
+if (substr($nomPage, 0, (strpos($nomPage, '-')-1)) == 'nous joindre'){
+    include_once 'nous_joindre.php';
+} else {
+    ?>
+
 <div class="topPageImage">
-	<div><!-- REM TODO À CODER -->		
+	<div>	
             <div id="titreSection">
                 <?php choixBanniere(); ?>       
             </div>
@@ -18,15 +25,13 @@ get_header(); ?>
 	</div>
 </div>
 
+<?php } ?>
 
 <div id="outer-content">    
 	<div id="inner-content">
 		<div id="content" class="container">
 			<div class="discription">
-                            <?php
-                                insererPage();                             
-                            ?> 
-                            <?php //get_sidebar(); ?>   
+                            <?php insererPage(); ?>   
 			</div>        
 		</div>
 	</div>
