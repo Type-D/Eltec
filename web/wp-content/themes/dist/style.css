@@ -6484,11 +6484,12 @@ form, fieldset {
  * partials/header
  * ---
  */
+/*
 #outer-header {
   width: 100%;
   background: url("img/outer-header-bg.gif") repeat-x left top;
 }
-
+*/
 #header {
   height: 221px;
   margin: 0 auto;
@@ -6570,10 +6571,11 @@ form, fieldset {
   padding: 0 0 0 0;
   list-style: none;
 }
-
+/*
 #nav li:hover, #nav li.current-menu-item {
   background: url("img/hover-bg.png") no-repeat left top;
 }
+*/
 .dropdown-menu{
   margin-top: 0;
 }
@@ -6591,6 +6593,7 @@ form, fieldset {
   color:#f38bb9;
   background: #f5f5f5;
 }
+/*
 #nav > li > a {
   text-decoration: none;
   color: #f38bb9;
@@ -6616,7 +6619,7 @@ form, fieldset {
   background: url("img/right-strip.gif") no-repeat right top;
 }
 .galeries div{margin-bottom: 30px;}
-
+*/
 @media (max-width: 991px) {
   #nav {
     clear: both;

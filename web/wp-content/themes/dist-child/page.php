@@ -1,29 +1,37 @@
-<?php get_header(); ?>
-<?php if(get_field('carousel')){
-	$idbanner = get_the_ID();
-}else{
-	$idbanner = 5;
-}?>
+<?php 
+
+/**
+ * Template Name: dist child
+ *
+ * @package WordPress
+ * @subpackage dist
+ * @since 1.0
+ */
+
+get_header(); 
+
+$nomPage = wp_title('', false);
+if (substr($nomPage, 0, (strpos($nomPage, '-')-1)) == 'nous joindre'){
+    include_once 'nous_joindre.php';
+} else {
+    ?>
+
 <div class="topPageImage">
-	<div>
-		<div><!-- REM TODO À CODER -->
-		</div>
-		<div>
-		</div>
+	<div>	
+            <div id="titreSection">
+                <?php choixBanniere(); ?>       
+            </div>
+            <div id="boutBaniere"></div>
 	</div>
 </div>
+
+<?php } ?>
+
 <div id="outer-content">    
 	<div id="inner-content">
 		<div id="content" class="container">
 			<div class="discription">
-				<div class="lireSuite">
-					<div></div><a>Lire la suite</a>
-				</div>
-				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-				<?php the_content(); ?>            
-				<?php endwhile; ?>            
-				<?php endif; ?>            
-				<?php //get_sidebar(); ?>        
+                            <?php insererPage(); ?>   
 			</div>        
 		</div>
 	</div>

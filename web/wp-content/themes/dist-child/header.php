@@ -23,6 +23,7 @@
 			<div id="wrapper">	
 				<!-- header -->
 				<div id="outer-header">
+                                    
 					<div class="container">
 						<div class="header-top row">
 						<?php
@@ -41,22 +42,31 @@
 							
 								echo '<div class="shop-cart"><a href="'.$cart_url.'">'.__('Panier').' <span class="number">'.$qty.'</span></a></div>';
 								 ?>
+                                                    
+                                                        <div id="header-top-menu">
+                                                            <a href="Eltec/web/english"><span>English</span></a>
+                                                            <span>/</span>
+                                                            <a href="Eltec/web/nous-joindre/"><span>Nous Joindres</span></a>
+                                                        </div>
+                                                    
 							<ul class="social">
-								<li class="mail">
-									<a href="mailto: info@omgaya.com">mail</a>
-								</li>
-								<li class="phone">
-									<a href="<?= get_page_uri(36);?>">phone</a>
-								</li>
+								
 								<li class="facebook">
-									<a href="http://www.facebook.com/pages/Studio-de-Yoga-Om-Gaya/130430727023270" target="_blank">facebook</a>
+                                                                    <a href="http://www.facebook.com/" target="_blank">facebook</a>
 								</li>
-							</ul>
+                                                                <li class="youTube">
+                                                                    <a href="http://www.youtube.com/" target="_blank">YouTube</a>
+                                                                </li>
+                                                        </ul>
+                                                    
+							
 						</div>
-						<div id="header-main row">
+                                            
+                                            <div id="header-main" class="row">
+                                                
 							<div class="col-lg-3 col-md-12 ">
-								<h1 class="logo"><a href="<?php echo home_url(); ?>">Om Gaya</a></h1>
-							</div>                        
+                                                            <h1 class="logo"><a href="<?php echo home_url('/accueil'); ?>" title="logo"></a></h1>
+  							</div>                        
 							<div class="col-lg-9 col-md-12">
 								<div id="navbox">
 									<?php html5blank_nav(); ?>

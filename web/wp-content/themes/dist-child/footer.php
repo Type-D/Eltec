@@ -4,23 +4,26 @@
 			<div class="footer-logo no-gutter">
 				<a href="<?= get_home_url();?>">footer-logo</a>
 			</div>
-			<div class=" hidden-xs col-sm-2 no-gutter">
-				<?php html5blank_child_nav_footer('NOS MODÈLES') ?>
+                    <div id="footerMenu">
+                   
+			<div class="footerMenu hidden-xs col-sm-2 no-gutter">
+				<?php html5blank_child_nav_footer('NOS MODÈLES', 'extra-menu') ?>
 			</div>
-			<div class=" hidden-xs col-sm-2 no-gutter">
-				<?php html5blank_child_nav_footer('À PROPOS') ?>
+			<div class="footerMenu hidden-xs col-sm-2 no-gutter">
+				<?php html5blank_child_nav_footer('À PROPOS', 'extra-menu2') ?>
 			</div>
-			<div class=" hidden-xs col-sm-2 no-gutter">
-				<?php html5blank_child_nav_footer('AIDE') ?>
+			<div class="footerMenu hidden-xs col-sm-2 no-gutter">
+				<?php html5blank_child_nav_footer('AIDE', 'extra-menu3') ?>
 			</div>	
-			<div class=" hidden-xs col-sm-2 no-gutter">
-				<?php html5blank_child_nav_footer('SUIVEZ-NOUS') ?>
+			<div class="footerMenu hidden-xs col-sm-2 no-gutter">
+				<?php html5blank_child_nav_footer('SUIVEZ-NOUS', 'extra-menu4') ?>
 			</div>
 			<div class=" hidden-xs col-sm-2 no-gutter">
 				<div class="footerTitle">Contact</div>
 				<address>1117, rue des Manufacturiers</address>
 				<address>Val-d'Or, Québec J9P 6Y7</address>
 			</div>
+                    </div>
 		</div>
 	</div>
 	<div id="bottom-footer">
