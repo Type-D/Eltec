@@ -14,6 +14,7 @@ $nomPage = wp_title('', false);
 if (substr($nomPage, 0, (strpos($nomPage, '-')-1)) == 'nous joindre'){
     include_once 'nous_joindre.php';
 } else {
+    
     ?>
 
 <div class="topPageImage">

@@ -95,88 +95,99 @@ function insererPage(){
             include_once 'accueil.php';
             break;
         case "carrières":
-            echo '<div id="propos">';
+            echo '<div id="propos" class="midContent">';
             insererContenuePage('a-propos');
             insererContenuePage("a-propos/carrieres");
             echo '</div>';
             break;
         case "groupe élément":
-            echo '<div id="propos">';
+            echo '<div id="propos" class="midContent">';
             insererContenuePage('a-propos');
             insererContenuePage("a-propos/groupe-element");
             echo '</div>';
             break;
         case "historique":
-            echo '<div id="propos">';
+            echo '<div id="propos" class="midContent">';
             insererContenuePage('a-propos');
             insererContenuePage("a-propos/historique");
             echo '</div>';
             break;
         case "notre équipe":
-            echo '<div id="propos">';
+            echo '<div id="propos" class="midContent">';
             insererContenuePage('a-propos');
             insererContenuePage("a-propos/notre-equipe");
             echo '</div>';
             break;
         case "qui nous sommes":
-            echo '<div id="propos">';
+            echo '<div id="propos" class="midContent">';
             insererContenuePage('a-propos');
             insererContenuePage("a-propos/qui-nous-sommes");
             echo '</div>';
             break;
         case "à propos":
-            echo '<div id="propos">';
+            echo '<div id="propos" class="midContent">';
             insererContenuePage('a-propos');
             echo '</div>';
             break;
         case "série 220":
-            echo "<div id='modele'>";
+            echo '<div id="modele" class="midContent">';
             insererContenuePage("nos-modeles/serie-220");
             echo "</div>";
             break;
         case "série 270":
-            echo "<div id='modele'>";
+            echo '<div id="modele" class="midContent">';
             insererContenuePage("nos-modeles/serie-270");
             echo "</div>";
             break;
         case "série 310":
-            echo "<div id='modele'>";
+            echo '<div id="modele" class="midContent">';
             insererContenuePage("nos-modeles/serie-310");
             echo "</div>";
             break;
         case "nos modèles":
-            echo "<div id='modele'>";
+            echo '<div id="modele" class="midContent">';
             insererContenuePage("nos-modeles");
+            echo "</div>";
+            break;
+        case "accessoires":
+            echo '<div id="accessoires" class="midContent">';
+            insererContenuePage("accessoires");
             echo "</div>";
             break;
         case "nous joindre":
             include_once "nous_joindre.php";
             break;
         case "pièces et service":
-            echo "<div id='piecesService'>";
+            echo '<div id="piecesService" class="midContent">';
             insererContenuePage("pieces-service");
             echo "</div>";
             break;                            
         case "communauté":
-            echo "<div id='communaute'><h2>Communauté</h2>";
+            echo '<div id="communaute" class="midContent"><h2>Communauté</h2>';
             insererContenuePage('communaute');
             echo "</div>";
             insererNouvelles();
             break;
         case "distributeurs":
-            echo '<div id="distributeurs"><div class="sectionGauche">'
+            echo '<div id="distributeurs" class="midContent"><div class="sectionGauche">'
             . '<h1 class="redText">Nos Distributeurs</h1>';
             insererContenuePage('distributeurs');
             echo '</div><div class="sectionDroite"><div id="mapMonde"></div></div></div>';
             break;
+        case "multimedia":
+            echo '<div id="galerieVideo" class="midContent">';
+            insererContenuePage("multimedia");
+            echo "</div>";
+            break; 
         default:
+            echo '<div class="midContent">';
             insererContenuePage($section);
+            echo "</div>";
     }
      
 }
 
 function insererContenuePage($nomPage){
-    //echo "---".wp_title('', false)."---".$nomPage."---";
     $the_query = new WP_Query( array('pagename'=>$nomPage) );
     if ( $the_query->have_posts() ) {
         while ( $the_query->have_posts() ) {
@@ -187,7 +198,6 @@ function insererContenuePage($nomPage){
 }
 
 function insererContenuePageAvecTitre($nomPage){
-    //echo "---".wp_title('', false)."---".$nomPage."---";
     $the_query = new WP_Query( array('pagename'=>$nomPage) );
     if ( $the_query->have_posts() ) {
         while ( $the_query->have_posts() ) {
@@ -200,9 +210,14 @@ function insererContenuePageAvecTitre($nomPage){
     }
 }
 
-function insererNouvelles(){
+function insererNouvelles($nomPage = ''){
     echo '<div id="nouvelles"><h2><a href="http://localhost/Eltec/web/communaute">Nouvelles</a></h2>';
-    $query = new WP_Query(array('cat' => '19'));
+    if ($nomPage == 'acceuil'){
+        $arg = array('cat' => '19', 'showposts' => '3');
+    } else {
+        $arg = array('cat' => '19', 'showposts' => '9');
+    }
+    $query = new WP_Query($arg);
     if($query->have_posts()){
        while($query->have_posts()){
             $query->the_post();

@@ -415,14 +415,12 @@ h2 {
 /* Distributeurs */
 .sectionGauche{
     float:left;
-    width:35%;
-    margin-left:50px;
-}
+    width:40%;
+ }
 
 .sectionDroite{
     float:right;
     width:55%;
-    margin-right:50px;
 }
 
 #mapMonde{
@@ -459,9 +457,8 @@ h2 {
     display: block;
 }
 
-
 #distributeurs p + p {
-    width:1180px;
+    width:1090px;
 }
 /* distributeurs end */
 
@@ -536,7 +533,7 @@ h2 {
 
 /* autres contenues */
 
-#propos, #modele, #piecesService{
+.midContent{
     width:1090px;
     margin:0 auto;
 }
@@ -547,10 +544,9 @@ h2 {
 }
 
 #modele li{
-    color:black;
-    
-    
+    color:black; 
 }
+
 #modele p a {
    color:red; 
    font-size:24px;
@@ -566,6 +562,25 @@ h2 {
     font-weight: bold;
 }
 
+#galerieVideo{
+    margin-top:20px;
+    height: 506px;
+    overflow: hidden;
+}
+
+.panel-title >a:hover{
+    color:black;
+}
+
+#nousJoindre h2{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#nousJoindre h4, #nousJoindre h5{
+    color:red;
+    font-weight: bold;
+}
 /* autre contenue end */
 
 /* Everything footer */
@@ -595,7 +610,11 @@ h2 {
 }
 
 .footerMenu ul li{
-    text-transform: capitalize;
+    //text-transform: capitalize;
+}
+
+#footerContact {
+    line-height: 2
 }
 
 #bottom-footer {

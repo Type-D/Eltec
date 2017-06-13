@@ -22,57 +22,34 @@
 			<!-- wrapper -->
 			<div id="wrapper">	
 				<!-- header -->
-				<div id="outer-header">
-                                    
-					<div class="container">
-						<div class="header-top row">
-						<?php
-								global $woocommerce;
+                            <div id="outer-header">
+                                <div class="container">
+                                    <div class="header-top row">                                                    
+                                        <div id="header-top-menu">
+                                            <a href="Eltec/web/english"><span>English</span></a>
+                                            <span>/</span>
+                                            <a href="Eltec/web/nous-joindre/"><span>Nous Joindres</span></a>
+                                        </div>
+                                        <ul class="social">
+                                            <li class="facebook">
+                                                <a href="http://www.facebook.com/" target="_blank">facebook</a>
+                                            </li>
+                                            <li class="youTube">
+                                                <a href="http://www.youtube.com/" target="_blank">YouTube</a>
+                                            </li>
+                                        </ul>                                                  	
+                                    </div>
+                                    <div id="header-main" class="row">
 
-								// get cart quantity
-								$qty = $woocommerce->cart->get_cart_contents_count();
-
-								// get cart total
-								$total = $woocommerce->cart->get_cart_total();
-
-								// get cart url
-								$cart_url = $woocommerce->cart->get_cart_url();
-
-								// if multiple products in cart
-							
-								echo '<div class="shop-cart"><a href="'.$cart_url.'">'.__('Panier').' <span class="number">'.$qty.'</span></a></div>';
-								 ?>
-                                                    
-                                                        <div id="header-top-menu">
-                                                            <a href="Eltec/web/english"><span>English</span></a>
-                                                            <span>/</span>
-                                                            <a href="Eltec/web/nous-joindre/"><span>Nous Joindres</span></a>
-                                                        </div>
-                                                    
-							<ul class="social">
-								
-								<li class="facebook">
-                                                                    <a href="http://www.facebook.com/" target="_blank">facebook</a>
-								</li>
-                                                                <li class="youTube">
-                                                                    <a href="http://www.youtube.com/" target="_blank">YouTube</a>
-                                                                </li>
-                                                        </ul>
-                                                    
-							
-						</div>
-                                            
-                                            <div id="header-main" class="row">
-                                                
-							<div class="col-lg-3 col-md-12 ">
-                                                            <h1 class="logo"><a href="<?php echo home_url('/accueil'); ?>" title="logo"></a></h1>
-  							</div>                        
-							<div class="col-lg-9 col-md-12">
-								<div id="navbox">
-									<?php html5blank_nav(); ?>
-								</div>
-							</div>
-						</div> 
-					</div>
-				</div>
+                                        <div class="col-lg-3 col-md-12 ">
+                                            <h1 class="logo"><a href="<?php echo home_url('/accueil'); ?>" title="logo"></a></h1>
+                                        </div>                        
+                                        <div class="col-lg-9 col-md-12">
+                                            <div id="navbox">
+                                                    <?php html5blank_nav(); ?>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
 			</div>

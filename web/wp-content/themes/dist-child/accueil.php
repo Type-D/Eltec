@@ -11,7 +11,7 @@
     <div id="modeles" class="col-lg-4 col-sm-12 "><a href="http://localhost/Eltec/web/nos-modeles"></a></div>
     <div id="multimedia" class="col-lg-4 col-sm-12 "><a href="http://localhost/Eltec/web/multimedia"></a></div>
 </div>
-<div id="distributeurs">
+<div id="distributeurs" class="midContent">
     <div class="sectionGauche">
         <h1 class="redText">Nos Distributeurs</h1>
         <?php insererContenuePage('distributeurs'); ?>
@@ -39,6 +39,6 @@
 </div>
 
 <div id="nouvellesAccueil">
-    <?php insererNouvelles(); ?>
+    <?php insererNouvelles('acceuil'); ?>
 </div>
 

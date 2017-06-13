@@ -12,13 +12,15 @@
 	<div id="inner-content">
 		<div id="content" class="container">
 			<div class="discription">
-                            <?php
-                                $postId = url_to_postid(get_permalink());
-                                $post = get_posts(array('include' => $postId));
-                                if ( $post ) {
-                                    the_content(); 
-                                } 
+                            <div class="midContent">
+                                <?php
+                                    $postId = url_to_postid(get_permalink());
+                                    $post = get_posts(array('include' => $postId));
+                                    if ( $post ) {
+                                        the_content(); 
+                                    } 
                                 ?>
+                            </div> 
 			</div>        
 		</div>
 	</div>

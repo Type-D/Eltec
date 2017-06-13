@@ -18,10 +18,15 @@
 			<div class="footerMenu hidden-xs col-sm-2 no-gutter">
 				<?php html5blank_child_nav_footer('SUIVEZ-NOUS', 'extra-menu4') ?>
 			</div>
-			<div class=" hidden-xs col-sm-2 no-gutter">
-				<div class="footerTitle">Contact</div>
-				<address>1117, rue des Manufacturiers</address>
-				<address>Val-d'Or, Québec J9P 6Y7</address>
+			<div class="footerMenu hidden-xs col-sm-2 no-gutter">
+				<div class="footerTitle">CONTACT</div>
+                                <div id="footerContact">
+                                    <address>1117, rue des Manufacturiers<br>
+                                        Val-d'Or, Québec J9P 6Y7</address>
+                                    <div id="telephone" class="redText">819 825-1117</div>
+                                    <a href="mailto:info@tecelement.com" target="_top" class="redText">info@tecelement.com</a><br>
+                                    <a href="http://facebook.com"  class="redText">FACEBOOK</a>
+                                </div>
 			</div>
                     </div>
 		</div>
