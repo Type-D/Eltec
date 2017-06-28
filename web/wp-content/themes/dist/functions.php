@@ -83,7 +83,7 @@ function html5blank_nav()
         'link_after'      => '</span>',
         'items_wrap'      => '<ul id="nav">%3$s</ul>',
         'depth'           => 0,
-        'walker'          => new Bootstrap_walker(),
+        'walker'          => '',//new Bootstrap_walker(),
         'current_page_item' => 'active'
         )
     );
