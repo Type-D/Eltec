@@ -137,7 +137,7 @@ h2 {
     display:block;
     }
 .sub-menu{
-    display:none;
+    //display:none;
     position:absolute;
     top:57px;
     background-color: black;
@@ -145,9 +145,10 @@ h2 {
 }
 
 #menu-item-913 ul{  
-    width:480px;
+    width:500px;
     left:-100px;
     padding-top:20px;
+    display:none;
 }
 
 #menu-item-913 ul li{
@@ -163,7 +164,7 @@ h2 {
     margin-left:29px;
 }
 
-#menu-item-916 ul{
+#menu-item-916 > ul{
     width:624px;
     left:-235px;
     display:none;
@@ -208,10 +209,65 @@ h2 {
     top:125px;
 }
 
+#menu-item-1189 > a > span,  #menu-item-1190 > a > span{
+    display:none;
+}
+
+#menu-item-1189.menu-item{
+    background-color: red;
+    height:54px;
+    width: 100%;
+    margin:0;
+    position:relative;
+}
+
+#menu-item-1190.menu-item{
+    clear:both;
+    background-color: red;
+    height:54px;
+    width: 100%;
+    margin:0;
+    padding:0;
+    position:relative;
+    
+}
+
+#menu-item-1189 > ul, #menu-item-1190 > ul {
+    position:absolute;
+    top:0;
+    left:0;
+    padding:0;
+    background-color: red;
+}
+
+#menu-item-1189 > ul > li > a:hover, #menu-item-1190 > ul > li > a:hover{
+    background-color: red;
+}
+
+#menu-item-1183.menu-item, #menu-item-1184.menu-item,  #menu-item-1188.menu-item, #menu-item-1186.menu-item{
+    border-right: 1px solid white;
+}
+
+#menu-item-1183.menu-item, #menu-item-1184.menu-item, #menu-item-1185.menu-item,
+#menu-item-1188.menu-item, #menu-item-1186.menu-item,  #menu-item-1187.menu-item{
+    font-size:16px;
+    text-transform: uppercase;
+    margin:0;
+    font-weight: bold;
+    width:150px;
+    height: 20px;
+    background-color: red;
+    padding:20px;
+}
+
+#menu-item-1189.menu-item a{
+    font-size:14px;
+}
+
 #titreSection{
         line-height: 60px;
 	height: 100%;
-	background-color: #000;
+	background-color: rgba(0,0,0,0.50);
         color:white;
 	float: left;
 }
@@ -226,7 +282,7 @@ h2 {
 #boutBaniere{
 	width: 0;
 	height: 0;
-	border-top: 190px solid #000;
+	border-top: 190px solid rgba(0,0,0,0.50);
 	border-right: 60px solid transparent;	
 	float: left;
 }
