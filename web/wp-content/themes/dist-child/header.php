@@ -11,7 +11,7 @@
 			<link href="//www.google-analytics.com" rel="dns-prefetch">
 			<link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
 			<link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
-			<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'/>
+			<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type='text/css'/>
 			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 			<!--[if lt IE 8]>        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/ie-hover.js"></script>        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/ie-png.js"></script>        <![endif]-->		
@@ -24,32 +24,44 @@
 				<!-- header -->
                             <div id="outer-header">
                                 <div class="container">
-                                    <div class="header-top row">                                                    
-                                        <div id="header-top-menu">
-                                            <a href="Eltec/web/english"><span>English</span></a>
-                                            <span>/</span>
-                                            <a href="Eltec/web/nous-joindre/"><span>Nous Joindres</span></a>
-                                        </div>
-                                        <ul class="social">
-                                            <li class="facebook">
-                                                <a href="http://www.facebook.com/" target="_blank">facebook</a>
-                                            </li>
-                                            <li class="youTube">
-                                                <a href="http://www.youtube.com/" target="_blank">YouTube</a>
-                                            </li>
-                                        </ul>                                                  	
+                                    <div class="header-top-wrapper">
+                                            <div class="header-top">
+                                                <div class="topMenu">
+                                                    <?php insertLangMenu(); ?> 
+                                                </div>
+                                                <ul class="social">
+                                                    <li class="facebook">
+                                                            <a href="http://www.facebook.com/" target="_blank">facebook</a>
+                                                    </li>
+                                                    <li class="youTube">
+                                                            <a href="http://www.youtube.com/" target="_blank">YouTube</a>
+                                                    </li>
+                                                </ul>                                                                                                                                     
+                                            </div>
                                     </div>
                                     <div id="header-main" class="row">
-
-                                        <div class="col-lg-3 col-md-12 ">
+                                        <!--<div class="col-lg-3 col-md-12 ">-->
                                             <h1 class="logo"><a href="<?php echo home_url('/accueil'); ?>" title="logo"></a></h1>
-                                        </div>                        
-                                        <div class="col-lg-9 col-md-12">
-                                            <div id="navbox">
-                                                    <?php html5blank_nav(); ?>
-                                            </div>
-                                        </div>
+                                        <!--</div>                        
+                                        <div class="col-lg-9 col-md-12">-->
+                                            <!--<div id="navbox">-->
+                                            <?php html5blank_nav(); ?>
+                                            <!--</div>-->
+                                        <!--</div>-->
                                     </div> 
                                 </div>
                             </div>
 			</div>
+<script>
+
+$(document).ready(function(){
+	//Sous-menu rouge
+	//$("ul.sub-menu").append('<li class="menu-item menu-item-type-post_type menu-item-object-page"><?php //insererSousMenuRouge(); ?></li>');
+	//Style des sous-menus avec images
+	$("ul.sub-menu>li:has(img)").addClass("picto-layout");
+	$("ul.sub-menu:has(li.picto-layout)").each(function(){
+		$(this).width($(this).children("li.picto-layout").length*173);
+		$(this).children("li.picto-layout:nth-child("+$(this).children("li.picto-layout").length+")").css("border-right","0");
+	});
+});
+</script>			

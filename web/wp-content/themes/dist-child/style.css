@@ -8,12 +8,33 @@
 @charset "UTF-8";
 
 /* General stuff */
+html {
+	min-height: 100%;
+}
 body {
-	background-color: white; //#0b0b0b;
+	height: 100vh;
+	background-color: #fff;
 }
 
-#wrapper, .topPageImage {
-	width: 1280px;
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #b6b6b6;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #b6b6b6;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #b6b6b6;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #b6b6b6;
+}
+
+#wrapper {
+	background-color: #111;
+}
+
+#wrapper, .carousel-inner {
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -24,11 +45,6 @@ body {
 .titleText{
     font-size: 40px;
     text-transform: uppercase;  
-}
-
-.smallText{
-    font-size: 16px;
-    text-transform: uppercase; 
 }
 
 .bigText{
@@ -43,11 +59,37 @@ h1 {
 h2 {
     color:red;
 }
+
+a, a:visited {
+	color: red;	
+}
+a:active, a:hover {
+	color: black;	
+}
+
+.midContent{
+    width:1280px;
+    margin:0 auto;
+}
+.midContentImg{
+    width:1920px;
+    margin:0 auto;
+}
+
+.noFloat{
+    clear:both;
+}
 /* General stuff end */
 
 /* Header */
-.header-top {
+.header-top-wrapper {
 	background-color: #fff;
+	text-align: center;
+}
+.header-top {
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
 }
 
 .social li.facebook{
@@ -75,12 +117,13 @@ h2 {
 #header-main{
     background: url("img/Eltec-Acier.jpg") repeat-y center top;
     width:100%;
+	max-width: 1280px;
+	margin: 0 auto;
 }
 
 .container{
-    width:1280px;
+	width: 100%;
     padding:0;
-
 }
 
 .row {
@@ -90,166 +133,308 @@ h2 {
 #outer-header {
   width: 100%;
 }
-
-.menu-item > a{
-    color:white;
-}
-
-#nav {
-    height: 70px;
-    padding-top:13px;
-}
-
-#nav > li > a {
-    text-decoration: none;
-    font-size: 16px;
-    font-family: 'Abel', sans-serif;
-    height: 100%;
-    display: block;
-    text-transform: uppercase;
-    padding : 15px;
-    margin-right:20px;
-}
-
-#nav li.current-menu-item > a > span{
-    color:red;
-}
- 
-#nav > li > a:active {
-    color:red;
-}
-
-#nav a:hover{
-    background-color:black;
-}
-
-#nav li{
-    position: relative;
-    height: 56px;
-}
-
-#nav li ul li{
-    float:left;
+.topMenu{
+    float:right;
     
 }
+.topMenu li{
+    float: left;
+    list-style: none;
+}
+ul#langue > li.menu-item {
+    height: 31px;
+}
 
-#nav li:hover ul{
+ul#langue > li.menu-item {
+    position: relative;
+    float: left;
+    text-align: center;
+}
+
+ul#langue > li.menu-item > a {
+    text-decoration: none;
+    font-size: 16px;
+    height: 100%;
+    display: block;
+    padding: 15px;
+}
+ul#langue li.menu-item a:active {
+    color: red;
+}
+
+ul#langue > li.menu-item a:hover {
+    //background-color: black;
+    color: red;
     display:block;
-    }
-.sub-menu{
+}
+
+ul#langue ul.sub-menu {
+    display: none;
+    //background-color: white;
+    padding: 0;
+    z-index: 255;
+}
+ul#langue > li.menu-item > ul.sub-menu  > li {
+    width: 100%;
+    padding: 5px 0;
+    font-size:16px
+    //background-color: white;
+}
+
+ul#langue>li.menu-item:hover ul.sub-menu {
+    display: block;
+}
+
+#langue li {
+    float: left;
+    padding: 0;
+    list-style: none;
+}
+/* header end*/
+
+/* Menu start */
+/* Menu + Submenus */
+ul#nav>li.menu-item {
+	position: relative;	
+	float:left;
+	text-align: left;
+}
+ul#nav li.menu-item  a{
+    color:white;
+	font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+}
+
+ul#nav>li.menu-item a:hover {
+	background-color:black;
+}
+
+ul#nav li.menu-item a:active {
+	color: red;
+}
+
+/* Menu only */
+ul#nav {
+    height: 70px;
+    padding-top:14px;
+	margin-right: 20px;
+}
+
+ul#nav > li.menu-item {
+	height: 56px;
+}
+
+ul#nav > li.menu-item > a {
+    text-decoration: none;
+    font-size: 16px;
+    height: 100%;
+    display: block;
+    padding : 15px;
+}
+ul#nav > li.current-menu-item > a > span{
+    color:red;
+}
+
+/* Submenus only */
+ul#nav ul.sub-menu{
     display:none;
     position:absolute;
-    top:57px;
     background-color: black;
     padding:0;  
+    z-index: 255;
+    width:500px;
 }
 
-#menu-item-913 ul{  
-    width:480px;
-    left:-100px;
-    padding-top:20px;
+ul#nav>li.menu-item:hover ul.sub-menu{
+    display:block;
 }
 
-#menu-item-913 ul li{
-    padding:10px 40px;
+ul#nav>li.menu-item ul li {
+	padding:0 40px;
 }
 
-#menu-item-913 ul li a{
-    text-transform: uppercase;
+ul#nav>li.menu-item ul li a {
     font-size:14px;
+	white-space: nowrap;
 }
 
-#menu-item-1015 {
-    margin-left:29px;
+ul#nav>li.menu-item>ul.sub-menu>li { 
+	width: 50%; 
+	line-height: 56px;
 }
 
-#menu-item-916 ul{
-    width:624px;
-    left:-235px;
-    display:none;
+/* Submenus w/ images */
+ul#nav>li.menu-item>ul.sub-menu>li.menu-item.picto-layout {
+	display: inline;
+	position: static;
+	width: auto;
+	padding:5px 10px;
+	margin: 10px 0;
+	float:left;
+	border-right: 1px solid #6c6c6c;
+	line-height: normal;
 }
 
-#menu-item-916 ul li{
-    padding:20px;
-    margin:20px 0;
-    height:140px;
-    width:208px;
+ul#nav>li.menu-item>ul.sub-menu>li.menu-item.picto-layout>a {
+	color: #f00;
+	font-weight: bold;
 }
 
+/* redNav only */
+ul#nav>li.menu-item>ul.sub-menu>li:last-child {
+	width: 100%; 
+	padding: 0;	
+	background-color: #f00;
+	height: 35px;
+}
+
+ul#nav>li.menu-item>ul.sub-menu>li:last-child > a:first-child {
+	display:none;
+        position:relative;
+}
+
+ul#nav>li.menu-item>ul.sub-menu>li:last-child > ul{
+    background-color: red;
+    width:100%;
+    height: 20px;
+}
+
+ul#nav>li.menu-item>ul.sub-menu>li:last-child > ul > li{
+    width:33%;
+}
+
+ul#nav ul.redNav {
+	display: block;
+	padding: 5px 0;
+	height: 25px;
+}
+ul#nav>li.menu-item ul li ul.redNav>li {
+	display: inline;
+	position: static;
+	padding: 0 15px;
+	height: 25px;
+	line-height: 25px;
+	border-right: 1px solid #fff;
+	float: none;
+}
+ul#nav>li.menu-item ul li ul.redNav>li:last-child {
+	border-right: 0;
+} 
+
+ul#nav ul.redNav li.current-menu-item >a>span {
+	color: #fff;	
+}
+
+ul#nav>li.menu-item ul li ul.redNav>li>a:hover>span {
+	background-color: #f00;
+	color: #fff;
+}
+/* Menus end */
 .logo {
   display: block;
   background: url("img/Eltec-Logo.png") no-repeat center top;
   height: 58px;
+  width: 170px;
   margin-top:-10px;
+  margin-left: 80px;
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  z-index: 256;
 }
-
-#menu-item-1012{
-    background: url(img/Serie-320.jpg) no-repeat top center;
+#divBanniereOuter {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 20%;
+	height: 25%;
+	max-height: 138px;
+} 
+#divBanniereOuter.accueil {
+	height: 31.77%;
+	max-height: 183px;
 }
-
-#menu-item-1013{
-    background: url(img/Serie-230.jpg) no-repeat top center;
-}
-
-#menu-item-1014{
-    background: url(img/Serie-220.jpg) no-repeat top center;
-}
-
-#menu-item-1013, #menu-item-1014{
-    border-right: 1px solid lightgray;
-}
-
-#menu-item-1012 a, #menu-item-1013 a, #menu-item-1014 a{
-    text-transform: uppercase;
-    color:red;
-    font-size:20px;
-    font-weight: bold;
-    position: absolute;
-    top:125px;
-}
-
-#titreSection{
-        line-height: 60px;
+#divBanniereInner {
+	width: 100%;
 	height: 100%;
-	background-color: #000;
-        color:white;
-	float: left;
 }
-.sansSousTitre{
-    margin:60px 90px 0;
+#divBanniere{
+	height: 100%;
+	background-color: rgba(0,0,0,0.6);
+    color: #fff;
+	float: left;
+	text-transform: uppercase;
+	line-height: normal;
+	white-space: nowrap;
+	padding-left: 60px;
+	padding-right: 30px;
+}
+.accueil #divBanniere {
+	padding-top: 45px;
+}
+#divBanniere>p {
+	margin-bottom: 0;
+}
+#divBanniere>p:first-child {
+	font-size: 25px; 
+	margin-top: 30px;
+}
+#divBanniere>p:last-child {
+	font-size: 50px;
+	font-weight: bold;
+}
+#divBanniere>p:only-child {
+	margin-top: 35px;
+	font-size: 60px;
 }
 
-.avecSousTitre{
-    margin:30px 90px 0;
+.accueil #divBanniere>div { 
+	padding-top: 7px;
+	font-size: 16.5px;
 }
 
-#boutBaniere{
-	width: 0;
-	height: 0;
-	border-top: 190px solid #000;
-	border-right: 60px solid transparent;	
-	float: left;
-}
 .bigLogo{
-    margin-top:15px;
-    height: 63px;
-    width:365px;
+    height: auto;
+	max-width: 100%;
 }
+
+#boutBaniere {
+    width: 0;
+    height: 0;
+    float: left;
+	border-left: 60px solid rgba(0,0,0,0.6);
+	border-bottom: 138px solid transparent;	
+}
+.accueil #boutBaniere {
+	border-left: 60px solid rgba(0,0,0,0.6);
+	border-bottom: 183px solid transparent;	
+}
+
+/* Carousel */
+.carousel-indicators li, .carousel-indicators .active {
+	width: 15px;
+	height: 15px;
+	border-radius: 0;
+	border: 0;
+}
+.carousel-indicators li { background-color: #fff; }
+.carousel-indicators .active { background-color: #f00; }
+
+.carousel-inner > .item > img{
+    margin:0 auto;
+}
+/* Carousel end */
 /* Header end */
 
-/* Page */
-/* REM TODO Code temporaire */
-.topPageImage {
-	background-image: url(img/Eltec-Machine-Accueil.jpg);
-	height: 576px;
-}
-.topPageImage>div {
-	position: relative;
+/* 404 */
+.error404 #outer-footer {
+	position: absolute;
+	bottom: 0;
 	left: 0;
-	top: 315px;
-	height: 190px;
+	right: 0;
 }
+/* 404 End */
 
+/* Page */
 .lireSuite {
 	height: 32px;
 	border: 1px solid #d50707;
@@ -275,10 +460,12 @@ h2 {
         text-transform: uppercase;
 }
 
+.discription { overflow: hidden;	}
+
 .discription h2 {
     color: red;
     font-size: 19px;
-    font-family: 'Abel', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0 0 14px;
     text-transform: uppercase;
     line-height: normal;
@@ -305,46 +492,75 @@ h2 {
 }
 
 #googleMap{
-    width:1280px;
     margin:0 auto 20px;
 }
 /* Page end */
 
 /* Accueil */
-
-#sousMenuAccueil{
+div.sousMenuAccueilContainer {
+	text-align: center;	
+	width: 100%;
+	background-color: #111;
+}
+ul.sousMenuAccueil{
+	padding: 32px 0 32px 0;
     background:url(img/Eltec-Acier-Grand.jpg)no-repeat center top;
-    height: 115px;
-    width:1280px;
-    margin:-25px auto 0;
+	display: block;
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	font-family: 'Roboto', sans-serif;
 }
 
-#sousMenuAccueil div>a{
-    height: 100%;
-    width:100%;
-    cursor: pointer;
-    display:block;
+ul.sousMenuAccueil>li.menu-item {
+	display: inline-block;
+	position: static;
+	width: 33.33%;
+	border-right: 1px solid #fff;
+	height: 53px;
+	text-shadow: 1px 1px 0 transparent, 1px 1px 0 #000;
+	font-size: 11px;
 }
 
-#service{
-    background: url(img/Eltec-Pieces-Service.png) no-repeat center center;
-    height: 117px;
-    width:426px;
-    float:left;
+ul.sousMenuAccueil>li.menu-item>a {
+	overflow: hidden;
+	display: inline-block;
 }
 
-#modeles{
-    background: url(img/Eltec-Modeles.png) no-repeat center center;
-    height: 117px;
-    width:426px;
-    float:left;
+ul.sousMenuAccueil>li.menu-item a:hover {
+  -o-transition:.25s;
+  -ms-transition:.25s;
+  -moz-transition:.25s;
+  -webkit-transition:.25s;
+  transition:.25s;
 }
 
-#multimedia{
-    background: url(img/Eltec-Banque-Multimedia.png) no-repeat center center;
-    height: 117px;
-    width:426px;
-    float:left;
+ul.sousMenuAccueil>li.menu-item a:hover, ul.sousMenuAccueil>li.menu-item a:active {
+	color: #fff;
+	text-decoration: none;
+}
+ul.sousMenuAccueil>li.menu-item>a>span {
+	text-align: left;
+	float: left;
+	
+}
+ul.sousMenuAccueil>li.menu-item>a>span.menu-image-title>span {
+	display: block;
+	line-height: 25px;
+}
+ul.sousMenuAccueil>li.menu-item>a>span.menu-image-title>span>span:first-child {
+	text-transform: uppercase;
+}
+ul.sousMenuAccueil>li.menu-item span.menu-image-title>span>span:last-child {
+	text-transform: uppercase;
+	clear: both;
+	font-size: 22px;
+}
+ul.sousMenuAccueil>li:last-child {
+	border-right: none;	
+}
+.menu-item a.menu-image-title-after.menu-image-not-hovered img, .menu-item a.menu-image-hovered.menu-image-title-after .menu-image-hover-wrapper {
+	padding-right: 40px;
 }
 
 #nouvellesAccueil{
@@ -357,8 +573,7 @@ h2 {
 
 /* Technologie */
 #informationTech{
-    background: url(img/Machine-Rouge-Acier.jpg) no-repeat center top;
-    width:1280px;
+    width:100%;
     height: 1029px;
 }
 
@@ -385,26 +600,50 @@ h2 {
 }
 
 #forestier{
-    float:right;
-    width:505px;
-    height:503px;
-    padding:80px;
+    background: url(img/fond-Rouge.jpg) repeat-x center top;
+    width:100%;
+    height:501px;
 }
 
 #forestier p{
     width:300px;
 }
 
-#technologie{
-    clear:both;
-    height:525px;
-    position:relative;
+#imgForestier{
+    background: url(img/Machine-rouge.jpg) no-repeat center top;
+    width:60%;
+    height:501px;
+    float:left;
 }
 
-#technologie > div:first-child{
+#txtForestier{
+    float:left;
+    width:40%;
+    padding:80px 80px 0;
+}
+
+#technologie{
+    background: url(img/tech-grand-acier.jpg) no-repeat center top;
+    background:#111;
+    clear:both;
+    height:526px;
+    width:100%;
+}
+
+#imgTechnologie{
+    background: url(img/tech-acier-squelette.jpg) no-repeat center top;
+    z-index: 255;
+    height:526px;
+    position:relative;
+    width:1280px;
+    margin:0 auto;
+}
+
+#txtTechnologie{
     position: absolute;
     top:210px;
     left:70px;
+ 
 }
 
 #technologie p {
@@ -415,9 +654,13 @@ h2 {
 /* Distributeurs */
 .sectionGauche{
     float:left;
-    width:40%;
+    width:480px;
  }
 
+ .sectionGauche > ul > li{
+     width:220px;
+     float:left;
+ }
 .sectionDroite{
     float:right;
     width:55%;
@@ -445,7 +688,6 @@ h2 {
 
 #distributeurs{
     min-height: 370px;
-    margin-top:20px;
 }
 
 #distributeurs p{
@@ -519,7 +761,7 @@ h2 {
     top:163px;
     left:16px;
     font-size:32px;
-    font-family: 'Abel', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     color: white;
 }
@@ -531,10 +773,18 @@ h2 {
 }
 /* nouvelle end */
 
+/* Contact map */
+.map{
+	width:100%;
+	height: 454px;
+}
+/* Contact end */
+
 /* autres contenues */
 
 .midContent{
-    width:1090px;
+    width: 100%;
+	max-width: 1280px;
     margin:0 auto;
 }
 
@@ -571,27 +821,75 @@ h2 {
 .panel-title >a:hover{
     color:black;
 }
-
+/* Nous joindre */
 #nousJoindre h2{
     text-transform: uppercase;
     font-weight: bold;
+	margin-top: 55px;
+	margin-bottom: 25px;
 }
 
 #nousJoindre h4, #nousJoindre h5{
     color:red;
     font-weight: bold;
 }
-/* autre contenue end */
+#frmContact {
+	margin-top: 55px;
+}
+#frmContact input {
+	color: #323332;	
+	padding: 14px 10px;
+	font-size: 12px;
+	border: 1px solid #b6b6b6;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#frmContact textarea {
+	color: #323332;	
+	padding: 14px 10px;
+	width: 100%;
+	height: 230px;
+	margin-bottom: 10px;
+}
+
+#frmContact input[type=button] {
+	background-color: #f00;
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: bold;
+}
+#frmContact input[type=button]:hover {
+	background-color: rgba(255,0,0,0.75);
+}
+div.cstMsg  {
+	position: fixed;
+	top: 25%;
+	left: calc(35% - 10px);
+	width: 30%;
+	padding: 30px;
+	display: none;
+	z-index: 256;	
+	border-radius: 10px;
+	color: #fff;
+	border: 1px solid #f00;
+	background-color:rgba(255, 0, 0, 0.6);
+}
+/* autre contenu end */
 
 /* Everything footer */
 #outer-footer {
-	background: #242424;
-	margin: 0 auto;
-	width: 1280px;
+	margin: 0;
+	width:100%;
+	background-color: #111;
 }
 
 #inner-footer {
 	background: url(img/Eltec-Acier.jpg) repeat left top;
+	max-width: 1280px;
+	width: 100%;
+	margin: 0 auto;
 }
 
 #footer {
@@ -602,19 +900,20 @@ h2 {
 
 #footerMenu{
     margin:0 auto;
-    width:1090px;
+    width: calc(100% - 190px);
+	overflow: hidden;
 }
 
 .footerMenu{
     width:20%;
 }
 
-.footerMenu ul li{
-    //text-transform: capitalize;
-}
-
 #footerContact {
     line-height: 2
+}
+
+#footerContact a:hover {
+	color: #fff;	
 }
 
 #bottom-footer {
@@ -642,6 +941,7 @@ h2 {
 	margin: 30px 0;
 	background: url(img/Eltec-logo.png) no-repeat center top;
 	height: 58px;
+	font-family: 'Roboto', sans-serif;
 }
 .footer-logo a {
 	height: 58px;
@@ -652,6 +952,30 @@ h2 {
 	font-size: 20px;
 	font-weight: bold;
 	margin: 30px 0;
+	white-space: nowrap;	
+}
+
+#footerContact div{
+	padding-left: 30px;
+	height: 21px;
+	margin-bottom: 5px;
+}
+
+#footerContact div, #footerContact div>a {
+	color: #f00;
+	font-weight: bold;
+}
+
+.pictoFBFooter  {
+	background: url(img/Eltec-Picto-Facebook-blanc.png) no-repeat left top;
+}
+
+.pictoEmailFooter{
+	background: url(img/Eltec-Picto-Email-blanc.png) no-repeat left top;
+}
+
+.pictoTelFooter{
+	background: url(img/Eltec-Picto-Tel-blanc.png) no-repeat left top;
 }
 
 .ozone img {
@@ -679,3 +1003,146 @@ address {
 	margin-bottom: 5px;
 }
 /* Footer end */
+
+/* WooCommerce */
+.woocommerce h1{
+  font-family: 'Roboto', sans-serif;
+}
+.woocommerce h3{
+  font-family: 'Roboto', sans-serif;
+}
+.woocommerce div.product form.cart .variations .label{
+  font-family: 'Roboto', sans-serif;
+}
+.woocommerce div.product form.cart .woocommerce-variation-description p{
+  font-family: 'Roboto', sans-serif;
+}
+.woocommerce div.product p.price, .woocommerce div.product span.price{
+  font-family: 'Roboto', sans-serif;
+}
+.woocommerce div.product .single_variation span.price{
+  font-family: 'Roboto', sans-serif;
+}
+.checkout h4{
+  font-family: 'Roboto', sans-serif;
+}
+.shop-cart a{
+  font-family: 'Roboto', sans-serif;
+}
+input.booking_calender{
+  font-family: 'Roboto', sans-serif;
+}
+.reservation-de-planche .cart:before{
+  font-family: 'Roboto', sans-serif;
+}
+#show_addon_price{
+    font-family: 'Roboto', sans-serif;
+}
+/* WooCommerce End */
+
+/* Width -- */
+@media screen and (max-width: 1280px) {
+	/* Nav du haut */
+	ul#nav { margin-right: 0; }
+
+	/* Banniere */
+	#divBanniere {
+		padding-left: 4.69%;
+		padding-right: 2.34%;		
+	}
+	#divBanniere>p:first-child {
+		font-size: 1.9vw;
+		margin-top: 11%
+	}
+	#divBanniere>p:last-child {
+		font-size: 3.8vw;
+	}
+	#divBanniere>p:only-child {
+		margin-top: 8%;
+		font-size: 4.5vw;
+	}
+	#boutBaniere {
+		border-left: 4.7vw solid rgba(0,0,0,0.6);
+		border-bottom: 11vw solid transparent;
+	}
+	
+	/* Banniere accueil only */
+	.accueil #divBanniere {
+		max-width: 50%;	
+		padding-top: 3.52%;
+	}	
+	.accueil #divBanniere>div { 
+		padding-top: 2%;
+		font-size: 1.3vw;
+	}
+	.accueil #boutBaniere {
+		border-left: 4.7vw solid rgba(0,0,0,0.6);
+		border-bottom: 14vw solid transparent;	
+	}	
+	
+	/* Sous-menu accueil */
+	.menu-item a.menu-image-title-after.menu-image-not-hovered img, .menu-item a.menu-image-hovered.menu-image-title-after .menu-image-hover-wrapper {
+		padding-right: 3.7vw;
+	}
+}
+
+@media screen and (max-width: 1150px) {
+	h1.logo { margin-top: -30px; }
+}
+
+@media screen and (max-width: 1000px) {
+	#footerMenu { width: calc(100% - 20px); }	
+}
+
+@media screen and (max-width: 870px) { 
+	/* Header et nav du haut */
+	h1.logo { margin-left: 40px; }
+	ul#nav { margin-top: 20px; }
+	ul#nav, ul#nav>li.menu-item, ul#nav>li.menu-item>ul.sub-menu, ul#nav>li.menu-item>ul.sub-menu>li.menu-item {
+		height: auto;
+		display: block;
+		float: none;
+		line-height: normal;
+		position: static;
+	}
+	ul#nav>li.menu-item>ul.sub-menu { width: 100% !important; }
+	ul#nav>li.menu-item>ul.sub-menu>li { width: 100%; }
+	ul#nav>li.menu-item>a { padding: 5px; }		
+	ul#nav ul.redNav { display: none; }
+	ul#nav>li.menu-item { background-color: #666666; }
+	ul#nav>li.menu-item>ul.sub-menu>li img.menu-image { display: none; }
+	ul#nav>li.menu-item>ul.sub-menu>li:last-child { display: none; }
+	ul#nav>li.menu-item>ul.sub-menu>li.menu-item.picto-layout {
+		display: block;
+		padding: 0 40px;
+		float: none;
+		margin-bottom: 0;
+		margin-top: 0;
+		border-right: 0;
+	}
+	ul#nav>li.menu-item>ul.sub-menu>li.menu-item.picto-layout>a { font-weight: normal; }
+	ul#nav>li.menu-item>ul.sub-menu>li.menu-item.picto-layout>a { color: #fff; }
+
+	ul#nav li {
+		border-bottom: 0;
+	}
+	ul#nav li, ul#nav li:hover a, ul#nav li.current-menu-item a{
+		background-image: none;
+	}
+	
+	/* Sous-menu accueil */
+	ul.sousMenuAccueil { 
+		padding: 0;
+	}
+	ul.sousMenuAccueil>li.menu-item {
+		width: 100%;
+		border-right: 0;
+		margin: 20px 0;
+		line-height: 53px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	#footerMenu { display: none; }	
+}
+

@@ -93,6 +93,8 @@ define('WP_DEBUG', false);
 
 define( 'WP_MEMORY_LIMIT', '256M' );
 
+set_time_limit(120);
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */

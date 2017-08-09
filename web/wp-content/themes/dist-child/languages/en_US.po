@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HTML5 Blank Child WordPress Theme\n"
+"POT-Creation-Date: 2017-07-11 00:08+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Dave Farrell <farrelld@gmail.com>\n"
+"Language-Team: Dave Farrell<farrelld@gmail.com>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+##### TEMPLATE ACCUEIL #####
+msgid "Slogan_accueil"
+msgstr "par des forestier pour des forestier"
+
+##### TEMPLATE NOUS JOINDRE #####
+#: ../nous_joindre.php:27
+msgid "Votre_nom"
+msgstr "Your name (required)"
+
+#: ../nous_joindre.php:28
+msgid "Votre_telephone"
+msgstr "Your phone (required)"
+
+#: ../nous_joindre.php:29
+msgid "Votre_email"
+msgstr "Your email (required)"
+
+#: ../nous_joindre.php:30
+msgid "Votre_message"
+msgstr "Your message"
+
+#: ../nous_joindre.php:31
+msgid "Envoyer"
+msgstr "Send"
+
+#: ../nous_joindre.php:35
+msgid "Felicitations"
+msgstr "Congratulations!"
+
+#: ../nous_joindre.php:36 REM TODO DF
+msgid "Demande_traitee"
+msgstr "Votre demande d’informations a été soumise et sera traitée dans les plus brefs délais."
+
+#: ../nous_joindre.php:37 REM TODO DF
+msgid "Merci_email"
+msgstr "Merci d’avoir communiqué avec nous."
+
+#: ../nous_joindre.php:41 REM TODO DF
+msgid "Probleme_envoi"
+msgstr "Un problème est survenu lors de l'envoi. S.v.p. essayez de nouveau."
+
+#: ../nous_joindre.php:63 REM TODO DF
+msgid "Nom_obligatoire"
+msgstr "Prière de saisir votre nom."
+
+#: ../nous_joindre.php:68 REM TODO DF
+msgid "Tel_obligatoire"
+msgstr "Prière de saisir un numéro de téléphone valide."
+
+#: ../nous_joindre.php:73 REM TODO DF
+msgid "Email_obligatoire"
+msgstr "Prière de saisir une adresse courriel valide."
+
+##### 404 #####
+
+#: ../404.php:6
+msgid "Message_404"
+msgstr "Oops! We couldn't find the requested page!"
+
+#: ../404.php:7
+msgid "Retour_accueil"
+msgstr "Back to homepage"
+
+##### FOOTER #####
+
+#: ../footer.php:9
+msgid "Nos_modeles"
+msgstr "OUR MODELS"
+
+#: ../footer.php:12
+msgid "A_propos"
+msgstr "ABOUT"
+
+#: ../footer.php:15
+msgid "Aide"
+msgstr "HELP"
+
+#: ../footer.php:18
+msgid "Suivez_nous"
+msgstr "FOLLOW US"
+
+#: ../footer.php:21
+msgid "Contact"
+msgstr "CONTACT"
+
+#: ../footer.php:23
+msgid "Adresse_1"
+msgstr "1117, des Manufacturiers street"
+
+#: ../footer.php:24
+msgid "Adresse_2"
+msgstr "Val-d'Or, Quebec J9P 6Y7"
+
+#: ../footer.php:34
+msgid "Droits_reserves"
+msgstr "All rights reserved &copy;"
+
+#: ../footer.php:35
+msgid "Une_realisation"
+msgstr "Created by"
