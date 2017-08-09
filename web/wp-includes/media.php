@@ -56,7 +56,6 @@ function wp_get_additional_image_sizes() {
  */
 function image_constrain_size_for_editor( $width, $height, $size = 'medium', $context = null ) {
 	global $content_width;
-
 	$_wp_additional_image_sizes = wp_get_additional_image_sizes();
 
 	if ( ! $context )
@@ -220,7 +219,6 @@ function image_downsize( $id, $size = 'medium' ) {
 			return false;
 		}
 	}
-
 	// try for a new style intermediate size
 	if ( $intermediate = image_get_intermediate_size($id, $size) ) {
 		$img_url = str_replace($img_url_basename, $intermediate['file'], $img_url);
